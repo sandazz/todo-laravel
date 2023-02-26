@@ -91,7 +91,15 @@ class TodoController extends Controller
     {
         $task = todo::find($todo);
         $task -> done = 1;
-        $task ->update();
+        $task -> save();
         return back();
     }
+
+    public function not_done($todo){
+        $task = todo::find($todo);
+        $task -> done =0 ;
+        $task -> save();
+        return back();
+    }
+
 }

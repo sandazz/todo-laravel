@@ -27,7 +27,8 @@ Route::resource('/TodoIndex', TodoController::class)->names([
     'show' => 'todo.view',
     'destroy' => 'todo.drop',
     'edit' => 'todo.modify',
-    'done' => 'todo.change',
 ]);
-Route::post('/TodoIndex/done',[SandasController::class,'done'])->name('done');
+
+Route::get('/TodoIndex/done/{task}',[TodoController::class,'done'])->name('done');
+Route::get('/TodoIndex/not_done/{task}',[TodoController::class,'not_done'])->name('not_done');
 
