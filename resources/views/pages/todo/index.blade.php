@@ -47,6 +47,8 @@
                                     <button class="btn btn-danger">Delete</button>
                                     <a href="{{ route('done', $task->id) }}" class="btn btn-danger">done</a>
                                     <a href="{{ route('not_done', $task->id) }}" class="btn btn-danger">not done</a>
+                                    <a href="{{ route('todo.modify', $task->id) }}" class="btn btn-danger">edite</a>
+
 
                                 </form>
 

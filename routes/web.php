@@ -27,6 +27,7 @@ Route::resource('/TodoIndex', TodoController::class)->names([
     'show' => 'todo.view',
     'destroy' => 'todo.drop',
     'edit' => 'todo.modify',
+    'update'=> 'todo.update',
 ]);
 
 Route::get('/TodoIndex/done/{task}',[TodoController::class,'done'])->name('done');

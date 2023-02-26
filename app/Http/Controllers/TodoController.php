@@ -57,9 +57,11 @@ class TodoController extends Controller
      * @param  \App\Models\todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function edit(todo $todo)
+    public function edit($todo)
     {
-        //
+        $response['task'] = todo::find($todo);
+        return view('pages.todo.update')->with($response);
+
     }
 
     /**
@@ -69,9 +71,11 @@ class TodoController extends Controller
      * @param  \App\Models\todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, todo $todo)
+    public function update(Request $request,$todo)
     {
-        //
+        $task = todo::find($todo);
+        $task -> update($request->all());
+        return back();
     }
 
     /**
