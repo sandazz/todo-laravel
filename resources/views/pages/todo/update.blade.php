@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="form-group">
-                            <input class="form-control" type="text" name="name" placeholder="{{ $task->name }}" aria-label="default input example">
+                            <input class="form-control" type="text" name="title" placeholder="{{ $task->title }}" aria-label="default input example">
                         </div>
                     </div>
                     <div class="col-lg-4">

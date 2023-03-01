@@ -5,16 +5,16 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="text-center" >
-                <h1 class="page-title">My Todo List</h1>
+                <h1 class="page-title">{{session()->get('name')}} Todo List</h1>
             </div>
         </div>
         <div class="col-lg-12">
-            <form action="{{ route('todo.add') }}" method="post" enctype="multipart/form">
+            <form action="{{ route('todo.store') }}" method="post" enctype="multipart/form">
                 @csrf
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="form-group">
-                            <input class="form-control" type="text" name="name" placeholder="Default input" aria-label="default input example">
+                            <input class="form-control" type="text" name="title" placeholder="Default input" aria-label="default input example">
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -38,7 +38,7 @@
                         @foreach ($tasks as $key => $task)
                         <tr>
                             <th scope="row">{{ ++$key}}</th>
-                            <td>{{ $task->name }}</td>
+                            <td>{{ $task->title }}</td>
                             <td>{{ $task->done }}</td>
                             <td>
                                 <form action="{{ route('todo.drop',$task->id) }}" method="post">
